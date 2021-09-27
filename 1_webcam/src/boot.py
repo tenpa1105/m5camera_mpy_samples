@@ -3,6 +3,7 @@ import network
 import utime
 import machine
 import camera
+import upip
 
 camera.init(0, format=camera.JPEG,framesize=camera.FRAME_QVGA, xclk_freq=camera.XCLK_20MHz )
 # camera.init(0, format=camera.GRAYSCALE,framesize=camera.FRAME_QVGA, xclk_freq=camera.XCLK_20MHz )
@@ -25,6 +26,26 @@ if not sta_if.isconnected():
 if sta_if.isconnected():
     print('network config:', sta_if.ifconfig())
     pin.off()
+
+    try:
+        import ulogging
+    except:
+        upip.install('micropython-ulogging')
+
+    try:
+        import pkg_resources
+    except:
+        upip.install('micropython-pkg_resources')
+
+    try:
+        import utemplate
+    except:
+        upip.install('utemplate')
+
+    try:
+        import picoweb
+    except:
+        upip.install('picoweb')
 else: 
     print('internet not available')
 

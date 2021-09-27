@@ -4,6 +4,7 @@ import picoweb
 import ure as re
 import gc
 import camera
+import network
 
 face_cascade = image.HaarCascade("frontalface", stages=25)
 
@@ -44,9 +45,11 @@ ROUTES = [#
 ]
 
 import ulogging as logging
+
 logging.basicConfig(level=logging.INFO)
 #logging.basicConfig(level=logging.DEBUG)
 
 gc.collect()
 app = picoweb.WebApp(__name__, ROUTES)
-app.run(host='192.168.0.90',debug=-1)
+sta_if = network.WLAN(network.STA_IF)
+app.run(host=sta_if.ifconfig()[0],debug=1)
