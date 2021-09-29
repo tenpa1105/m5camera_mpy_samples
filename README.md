@@ -12,7 +12,7 @@ VSCode + pymakr の使用を前提としています。
 git clone https://github.com/tenpa1105/m5camera_mpy_samples.git
 ```
 3. VSCodeで、実行するサンプルのディレクトリを開いてください
-4. src/config.pyを環境に合わせて設定してください
+4. src/config_sample.pyを環境に合わせて設定してください。設定後、config.pyにrenameしてください
 ```
 WIFI_SSID = "please enter your wifi ssid"
 WIFI_PASS = "please enter your wifi password"
