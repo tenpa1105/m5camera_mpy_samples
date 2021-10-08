@@ -1,0 +1,5 @@
+WIFI_SSID = "please enter your wifi ssid"
+WIFI_PASS = "please enter your wifi password"
+CLI_CERT_PATH = "/certs/certificate.pem.crt"
+CLI_PRIV_KEY_PATH = "/certs/private.pem.key"
+AWS_IOT_ENDPOINT = "xxxxxxxxxxxxx-ats.iot.ap-northeast-1.amazonaws.com"
